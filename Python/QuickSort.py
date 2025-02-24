@@ -3,9 +3,9 @@ def quick_sort(arr):
         return arr
     else:
         pivot = arr[0]
-        less_than_pivot = [x for x in arr[1:] if x <= pivot]
-        greater_than_pivot = [x for x in arr[1:] if x > pivot]
-        return quick_sort(less_than_pivot) + [pivot] + quick_sort(greater_than_pivot)
+        less = [x for x in arr[1:] if x <= pivot]
+        greater = [x for x in arr[1:] if x > pivot]
+        return quick_sort(less) + [pivot] + quick_sort(greater)
 
 if __name__ == "__main__":
     import sys

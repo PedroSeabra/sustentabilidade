@@ -1,26 +1,19 @@
 import java.util.Scanner;
 
 // BubbleSort.java
-public class BubbleSort {
-    public static void bubbleSort(int[] arr) {
-        int n = arr.length;
-        for (int i = 0; i < n - 1; i++) {
-            for (int j = 0; j < n - i - 1; j++) {
-                if (arr[j] > arr[j + 1]) {
-                    // Troca arr[j] e arr[j+1]
-                    int temp = arr[j];
-                    arr[j] = arr[j + 1];
-                    arr[j + 1] = temp;
+public class SelectionSort {
+        public static void selectionSort(int[] array) {
+        for (int i = 0; i < array.length - 1; i++) {
+            int minIndex = i;
+            for (int j = i + 1; j < array.length; j++) {
+                if (array[j] < array[minIndex]) {
+                    minIndex = j;
                 }
             }
+            int temp = array[minIndex];
+            array[minIndex] = array[i];
+            array[i] = temp;
         }
-    }
-    
-    public static void printArray(int[] arr) {
-        for (int num : arr) {
-            System.out.print(num + " ");
-        }
-        System.out.println();
     }
     
     public static void main(String[] args) {
@@ -37,7 +30,7 @@ public class BubbleSort {
 
         // System.out.println("Array original:");
         // printArray(arr);
-        bubbleSort(arr);
+        selectionSort(arr);
         // System.out.println("Array ordenado (Bubble Sort):");
         // printArray(arr);
     }
